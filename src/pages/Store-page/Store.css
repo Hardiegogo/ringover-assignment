@@ -1,0 +1,24 @@
+.store{
+    min-height: 100vh;
+}
+.store-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 55% 20% ;
+    height: 100%;
+    gap: 2.4rem;
+    padding: 1.6rem;
+    margin: auto;
+    margin-top: 2.4rem;
+    
+}
+
+@media screen and (max-width:1342px) {
+    .store-content {
+        grid-template-columns: 30% 65%;
+    }
+    
+    .cart-container{
+        grid-column-start: 2;
+    }
+}
