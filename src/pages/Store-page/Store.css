@@ -22,3 +22,13 @@
         grid-column-start: 2;
     }
 }
+
+@media screen and (max-width:600px) {
+    .store-content {
+        grid-template-columns: 95%;
+    }
+    
+    .cart-container{
+        grid-column-start: 1;
+    }
+}

@@ -3,6 +3,7 @@
     justify-content: space-around;
     padding: 1.6rem;
     font-size: 1.2rem;
+    flex-wrap: wrap;
     
 }
 

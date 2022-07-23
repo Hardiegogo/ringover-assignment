@@ -49,3 +49,9 @@
     position: absolute;
     top:0;
   }
+
+  @media screen and (max-width:1342px) {
+    .hero-section{
+        font-size: 1.6rem;
+    }
+}
