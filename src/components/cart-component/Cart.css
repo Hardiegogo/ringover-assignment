@@ -3,6 +3,7 @@
     padding: 1.6rem;
     display: flex;
     flex-direction: column;
+    min-height: 25rem;
     
 }
 
@@ -59,7 +60,6 @@
 }
 
 .empty-text{
-    height: 100%;
     display: grid;
     place-items: center;
     font-size: 1rem;
