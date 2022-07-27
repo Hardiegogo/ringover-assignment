@@ -1,26 +1,17 @@
 import React,{useState,useEffect} from 'react'
 import './ProductList.css'
 import {BsSearch,BsCart,BsCartFill} from 'react-icons/bs'
-import {AiFillStar,AiOutlineStar} from 'react-icons/ai'
 import { useProducts } from '../../context/useProducts'
 import { calcFilteredProducts } from '../../utils/calcFilteredProducts'
-const printRating=(rating)=>{
-    const numOfStars=[1,2,3,4,5]
-    return numOfStars.map((star,index)=>{
-        if(index<rating) return <AiFillStar size={15} color="#FFC94D" />
-        else return <AiOutlineStar size={15} color="#FFC94D"/>
-    })
-}
-
-const calculateIsInCart=(cartItems,product)=>{
-    const result=cartItems?.find(item=>item._id===product._id)
-    return result ? true : false
-}
+import {useNavigate} from 'react-router-dom'
+import { printRating } from "../../utils/printRating";
+import { calculateIsInCart } from "../../utils/calculateIsInCart";
 
 const ProductCard=({product})=>{
     const {name,imgLink,price,rating}=product
     const starsToBeShown=printRating(rating)
     const {data,setData}=useProducts()
+    const navigate=useNavigate()
     const isInCart=calculateIsInCart(data.cart,product)
     const cartClickHandler=()=>{
         if(!isInCart){
@@ -37,7 +28,7 @@ const ProductCard=({product})=>{
         } 
     }
     return ( <div className='product'>
-        <div className='product-img'>
+        <div className='product-img' onClick={()=>navigate(`/product/${product._id}`)}>
             <img src={imgLink} alt="" />
         </div>
         <div className='product-details'>
@@ -51,7 +42,6 @@ const ProductCard=({product})=>{
                 <p className='price'>Rs.{price}</p>
                 <div>
                     {starsToBeShown}
-                    
                 </div>
             </div>
         </div>
@@ -76,7 +66,7 @@ const ProductList=()=> {
             <div className='header-right'>
                 <BsSearch size={25}/>
                 <select id="" className='sort-by'>
-                    <option value="" disabled selected>Sort by</option>
+                    <option value="" disabled selected >Sort by</option>
                 </select>
             </div>
         </div>

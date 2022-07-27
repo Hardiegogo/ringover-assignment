@@ -19,15 +19,15 @@ const Filter=()=> {
                 Cost
             </h4>
             <div>
-            <label className='price-range'> <input type="checkbox"  id="" checked={filterAbove1500} onClick={()=>setData(state=>({...state,filterAbove1500:!state.filterAbove1500}))}/> Rs.1500-3999</label>
-            <label className='price-range'> <input type="checkbox"  id="" checked={filterAbove4000} onClick={()=>setData(state=>({...state,filterAbove4000:!state.filterAbove4000}))}/> Rs.4000-6999</label>
-            <label className='price-range'> <input type="checkbox"  id="" checked={filterAbove7000} onClick={()=>setData(state=>({...state,filterAbove7000:!state.filterAbove7000}))} /> +Rs.7000</label>
+            <label className='price-range'> <input type="checkbox"  id="" checked={filterAbove1500} onChange={()=>setData(state=>({...state,filterAbove1500:!state.filterAbove1500}))}/> Rs.1500-3999</label>
+            <label className='price-range'> <input type="checkbox"  id="" checked={filterAbove4000} onChange={()=>setData(state=>({...state,filterAbove4000:!state.filterAbove4000}))}/> Rs.4000-6999</label>
+            <label className='price-range'> <input type="checkbox"  id="" checked={filterAbove7000} onChange={()=>setData(state=>({...state,filterAbove7000:!state.filterAbove7000}))} /> +Rs.7000</label>
             </div>
             <h4  className='filters-heading'>
               Type
             </h4>
-            <label className='type'> <input type="checkbox"  id="" checked={filterByLoafers} onClick={()=>setData(state=>({...state,filterByLoafers:!state.filterByLoafers}))} /> Loafers</label>
-            <label className='type'> <input type="checkbox"  id="" checked={filterBySneakers} onClick={()=>setData(state=>({...state,filterBySneakers:!state.filterBySneakers}))}/> Sneakers</label>
+            <label className='type'> <input type="checkbox"  id="" checked={filterByLoafers} onChange={()=>setData(state=>({...state,filterByLoafers:!state.filterByLoafers}))} /> Loafers</label>
+            <label className='type'> <input type="checkbox"  id="" checked={filterBySneakers} onChange={()=>setData(state=>({...state,filterBySneakers:!state.filterBySneakers}))}/> Sneakers</label>
         </main>
         <footer>
         <button className='btn-primary' onClick={()=>setData(state=>({...state,

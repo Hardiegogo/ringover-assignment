@@ -4,10 +4,10 @@ import {BsMinecartLoaded} from 'react-icons/bs'
 import {BiMap} from 'react-icons/bi'
 import {AiOutlineCalendar} from 'react-icons/ai'
 import { useProducts } from '../../context/useProducts'
-import {MdDeleteOutline} from 'react-icons/md'
+import {BiXCircle} from 'react-icons/bi'
 
 const CartItemTile=({product})=>{
-    const {name}=product
+    const {name,imgLink}=product
     const {data,setData}=useProducts()
     const deleteClickHandler=()=>{
         const newCart=data.cart.filter(item=>item._id!==product._id)
@@ -17,9 +17,15 @@ const CartItemTile=({product})=>{
         }))
     }
     return <div className='cart-tile'>
-        <h4>{name}</h4>
+        <div className='cart-img'>
+            <img src={imgLink} alt="" />
+        </div>
+        <div >
+            <h4>{name}</h4>
+            <p>By Kicksup and you</p>
+        </div>
         <div className='delete-btn' onClick={deleteClickHandler}>
-            <MdDeleteOutline size={25}/>
+            <BiXCircle color='red' size={20}/>
         </div>
     </div>
 }
